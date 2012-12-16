@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'http://community.opscode.com/api/v1'
+
+cookbook 'apt'
+cookbook 'java'
+
+cookbook 'cassandra',
+    :git => 'https://github.com/calebgroom/cassandra-chef-cookbook'
