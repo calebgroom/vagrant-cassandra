@@ -7,4 +7,4 @@ cookbook 'apt'
 cookbook 'java'
 
 cookbook 'cassandra',
-    :git => 'https://github.com/calebgroom/cassandra-chef-cookbook'
+    :git => 'https://github.com/michaelklishin/cassandra-chef-cookbook'
