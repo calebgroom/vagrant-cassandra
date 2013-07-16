@@ -25,7 +25,7 @@ Vagrant::Config.run do |config|
       config2.vm.box_url = "http://files.vagrantup.com/precise64.box"
       config2.vm.host_name = server['name']
       config2.vm.network :hostonly, server['ip']
-      config2.vm.provision :shell, :inline => "if [ \"$(chef-client --version |awk '{print $2}')\" != \"10.16.4-1\" ]; then bash <(wget https://www.opscode.com/chef/install.sh -q --tries=10 -O -) -v 10.16.4-1 2>> /dev/null; fi"
+      config2.vm.provision :shell, :inline => "gem install chef --version 11.4.2 --no-rdoc --no-ri --conservative"
       config2.vm.provision :chef_solo do |chef|
         chef.log_level = :debug
         chef.cookbooks_path = ["vagrant/cookbooks", "vagrant/site-cookbooks"]
