@@ -1,0 +1,4 @@
+.ruby-gemset
+.vagrant
+vagrant/cookbooks/
+vagrant/tmp/
