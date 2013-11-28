@@ -21,8 +21,8 @@ end
 Vagrant::Config.run do |config|
   servers.each do |server|
     config.vm.define server['name'] do |config2|
-      config2.vm.box = "precise"
-      config2.vm.box_url = "http://files.vagrantup.com/precise64.box"
+      config2.vm.box = "precise64-ruby-1.9.3"
+      config2.vm.box_url = "https://dl.dropbox.com/u/14292474/vagrantboxes/precise64-ruby-1.9.3-p194.box"
       config2.vm.host_name = server['name']
       config2.vm.network :hostonly, server['ip']
       config2.vm.provision :shell, :inline => "gem install chef --version 11.4.2 --no-rdoc --no-ri --conservative"
@@ -35,7 +35,7 @@ Vagrant::Config.run do |config|
         chef.json = {
           :cassandra => {'cluster_name' => 'My Cluster',
                          'initial_token' => server['initial_token'],
-                         'seeds' => seeds.join(","),
+                         'seeds' => seeds,
                          'listen_address' => server['ip'],
                          'rpc_address' => server['ip']}
         }
