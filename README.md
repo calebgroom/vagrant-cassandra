@@ -62,7 +62,7 @@ Copy and paste this sample data set:
     set Users['jsmith']['last'] = 'Smith';
     set Users['jsmith']['age'] = '38';
 
-Verify another node in the cluster can read the the `jsmith` record:
+Verify another node in the cluster can read the `jsmith` record:
 
     vagrant ssh node3
     /usr/local/cassandra/bin/cassandra-cli -h 192.168.2.12
